@@ -1,32 +1,19 @@
 package forestry.storage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.Predicate;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ITag;
 
-import forestry.api.storage.IBackpackFilterConfigurable;
+public class BackpackFilter implements Predicate<ItemStack> {
 
-public class BackpackFilter implements IBackpackFilterConfigurable {
+	private final ITag<Item> accept;
+	private final ITag<Item> reject;
 
-	private final List<Ingredient> accept = new ArrayList<>();
-	private final List<Ingredient> reject = new ArrayList<>();
-
-	@Override
-	public void accept(Ingredient ingredient) {
-		accept.add(ingredient);
-	}
-
-	@Override
-	public void reject(Ingredient ingredient) {
-		reject.add(ingredient);
-	}
-
-	@Override
-	public void clear() {
-		accept.clear();
-		reject.clear();
+	public BackpackFilter(ITag<Item> accept, ITag<Item> reject) {
+		this.accept = accept;
+		this.reject = reject;
 	}
 
 	@Override
@@ -37,10 +24,7 @@ public class BackpackFilter implements IBackpackFilterConfigurable {
 
 		// I think that the backpack denies anything except what is allowed, but from what is allowed you can say
 		// what will be rejected (like an override)
-		if (accept.stream().anyMatch(ingredient -> ingredient.test(itemStack))) {
-			return reject.stream().noneMatch(ingredient -> ingredient.test(itemStack));
-		} else {
-			return false;
-		}
+		Item item = itemStack.getItem();
+		return accept.contains(item) && !reject.contains(item);
 	}
 }
