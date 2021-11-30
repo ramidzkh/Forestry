@@ -35,12 +35,12 @@ public class BackpackFilter implements IBackpackFilterConfigurable {
 			return false;
 		}
 
-		// I think that the backpack allows anything except what is rejected, but from what is rejected you can say
-		// what will be allowed (like an override)
-		if (reject.stream().anyMatch(ingredient -> ingredient.test(itemStack))) {
-			return accept.stream().anyMatch(ingredient -> ingredient.test(itemStack));
+		// I think that the backpack denies anything except what is allowed, but from what is allowed you can say
+		// what will be rejected (like an override)
+		if (accept.stream().anyMatch(ingredient -> ingredient.test(itemStack))) {
+			return reject.stream().noneMatch(ingredient -> ingredient.test(itemStack));
 		} else {
-			return true;
+			return false;
 		}
 	}
 }
