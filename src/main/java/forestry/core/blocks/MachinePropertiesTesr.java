@@ -46,6 +46,7 @@ public class MachinePropertiesTesr<T extends TileForestry> extends MachineProper
 	}
 
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public void clientSetup() {
 		if (renderer != null) {
 			ClientRegistry.bindTileEntityRenderer(getTeType(), (dispatcher) -> new RenderForestryTile<>(dispatcher, renderer));
