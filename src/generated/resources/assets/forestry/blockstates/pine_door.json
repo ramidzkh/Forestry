@@ -1,123 +1,123 @@
 {
   "variants": {
-    "half=upper,hinge=left,facing=north,open=true": {
+    "hinge=left,half=upper,facing=north,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge"
     },
-    "half=upper,hinge=left,facing=north,open=false": {
+    "hinge=left,half=upper,facing=north,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 270
     },
-    "half=upper,hinge=right,facing=north,open=true": {
+    "hinge=right,half=upper,facing=north,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 180
     },
-    "half=upper,hinge=right,facing=north,open=false": {
+    "hinge=right,half=upper,facing=north,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 270
     },
-    "half=lower,hinge=left,facing=north,open=true": {
+    "hinge=left,half=lower,facing=north,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge"
     },
-    "half=lower,hinge=left,facing=north,open=false": {
+    "hinge=left,half=lower,facing=north,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 270
     },
-    "half=lower,hinge=right,facing=north,open=true": {
+    "hinge=right,half=lower,facing=north,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 180
     },
-    "half=lower,hinge=right,facing=north,open=false": {
+    "hinge=right,half=lower,facing=north,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 270
     },
-    "half=upper,hinge=left,facing=south,open=true": {
+    "hinge=left,half=upper,facing=south,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 180
     },
-    "half=upper,hinge=left,facing=south,open=false": {
+    "hinge=left,half=upper,facing=south,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 90
     },
-    "half=upper,hinge=right,facing=south,open=true": {
+    "hinge=right,half=upper,facing=south,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top"
     },
-    "half=upper,hinge=right,facing=south,open=false": {
+    "hinge=right,half=upper,facing=south,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 90
     },
-    "half=lower,hinge=left,facing=south,open=true": {
+    "hinge=left,half=lower,facing=south,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 180
     },
-    "half=lower,hinge=left,facing=south,open=false": {
+    "hinge=left,half=lower,facing=south,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 90
     },
-    "half=lower,hinge=right,facing=south,open=true": {
+    "hinge=right,half=lower,facing=south,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom"
     },
-    "half=lower,hinge=right,facing=south,open=false": {
+    "hinge=right,half=lower,facing=south,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 90
     },
-    "half=upper,hinge=left,facing=west,open=true": {
+    "hinge=left,half=upper,facing=west,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 270
     },
-    "half=upper,hinge=left,facing=west,open=false": {
+    "hinge=left,half=upper,facing=west,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 180
     },
-    "half=upper,hinge=right,facing=west,open=true": {
+    "hinge=right,half=upper,facing=west,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 90
     },
-    "half=upper,hinge=right,facing=west,open=false": {
+    "hinge=right,half=upper,facing=west,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 180
     },
-    "half=lower,hinge=left,facing=west,open=true": {
+    "hinge=left,half=lower,facing=west,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 270
     },
-    "half=lower,hinge=left,facing=west,open=false": {
+    "hinge=left,half=lower,facing=west,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 180
     },
-    "half=lower,hinge=right,facing=west,open=true": {
+    "hinge=right,half=lower,facing=west,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 90
     },
-    "half=lower,hinge=right,facing=west,open=false": {
+    "hinge=right,half=lower,facing=west,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 180
     },
-    "half=upper,hinge=left,facing=east,open=true": {
+    "hinge=left,half=upper,facing=east,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge",
       "y": 90
     },
-    "half=upper,hinge=left,facing=east,open=false": {
+    "hinge=left,half=upper,facing=east,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top"
     },
-    "half=upper,hinge=right,facing=east,open=true": {
+    "hinge=right,half=upper,facing=east,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_top",
       "y": 270
     },
-    "half=upper,hinge=right,facing=east,open=false": {
+    "hinge=right,half=upper,facing=east,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_top_hinge"
     },
-    "half=lower,hinge=left,facing=east,open=true": {
+    "hinge=left,half=lower,facing=east,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge",
       "y": 90
     },
-    "half=lower,hinge=left,facing=east,open=false": {
+    "hinge=left,half=lower,facing=east,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom"
     },
-    "half=lower,hinge=right,facing=east,open=true": {
+    "hinge=right,half=lower,facing=east,open=true": {
       "model": "forestry:block/arboriculture/doors/pine_bottom",
       "y": 270
     },
-    "half=lower,hinge=right,facing=east,open=false": {
+    "hinge=right,half=lower,facing=east,open=false": {
       "model": "forestry:block/arboriculture/doors/pine_bottom_hinge"
     }
   }
