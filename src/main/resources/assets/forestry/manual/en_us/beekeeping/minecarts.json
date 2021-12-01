@@ -10,8 +10,8 @@
 		{
 			"type": "crafting",
 			"locations": [
-				"forestry:bee_house_minecart", 
-				"forestry:apiary_minecart"
+				"forestry:cart_bee_house",
+				"forestry:cart_apiary"
 			]
 		}
 	]]
