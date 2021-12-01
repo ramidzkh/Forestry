@@ -18,7 +18,6 @@ import java.util.Objects;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.gen.feature.Feature;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +35,6 @@ import forestry.api.core.IArmorNaturalist;
 import forestry.api.modules.ForestryModule;
 import forestry.arboriculture.capabilities.ArmorNaturalist;
 import forestry.arboriculture.commands.CommandTree;
-import forestry.arboriculture.features.ArboricultureBlocks;
 import forestry.arboriculture.features.ArboricultureFeatures;
 import forestry.arboriculture.genetics.TreeDefinition;
 import forestry.arboriculture.genetics.TreeFactory;
@@ -245,12 +243,6 @@ public class ModuleArboriculture extends BlankForestryModule {
 		//		}
 		//		return false;
 		return false;
-	}
-
-	@Override
-	public void getHiddenItems(List<ItemStack> hiddenItems) {
-		// sapling itemBlock is different from the normal item
-		hiddenItems.add(ArboricultureBlocks.SAPLING_GE.stack());
 	}
 
 	//@SubscribeEvent

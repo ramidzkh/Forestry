@@ -27,6 +27,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
+import forestry.climatology.features.ClimatologyItems;
 import forestry.modules.features.FeatureItem;
 import forestry.storage.features.BackpackItems;
 import net.minecraftforge.common.Tags;
@@ -378,6 +379,19 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 						.define('R', Tags.Items.DUSTS_REDSTONE))
 				.build(consumer, id("carpenter", "circuits", "intricate"));
 
+		new CarpenterRecipeBuilder()
+				.setPackagingTime(100)
+				.setLiquid(new FluidStack(Fluids.WATER, 2000))
+				.setBox(Ingredient.EMPTY)
+				.recipe(ShapedRecipeBuilder.shaped(ClimatologyItems.HABITAT_SCREEN)
+						.pattern("IPI")
+						.pattern("IPI")
+						.pattern("GDG")
+						.define('G', CoreItems.GEAR_BRONZE)
+						.define('P', Tags.Items.GLASS_PANES)
+						.define('I', CoreItems.INGOT_BRONZE)
+						.define('D', Tags.Items.GEMS_DIAMOND))
+				.build(consumer, id("carpenter", "habitat_screen"));
 		// / Crates
 		new CarpenterRecipeBuilder()
 				.setPackagingTime(20)
@@ -851,6 +865,34 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
 				.build(consumer, id("fermenter", "sapling"));
+		new FermenterRecipeBuilder()
+				.setResource(Ingredient.of(Items.CACTUS))
+				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cactus"))
+				.setModifier(1)
+				.setOutput(ForestryFluids.BIOMASS.getFluid())
+				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
+				.build(consumer, id("fermenter", "cactus"));
+		new FermenterRecipeBuilder()
+				.setResource(Ingredient.of(Tags.Items.CROPS_WHEAT))
+				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat"))
+				.setModifier(1)
+				.setOutput(ForestryFluids.BIOMASS.getFluid())
+				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
+				.build(consumer, id("fermenter", "wheat"));
+		new FermenterRecipeBuilder()
+				.setResource(Ingredient.of(Tags.Items.CROPS_POTATO))
+				.setFermentationValue(2 * ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat")) // TODO: Its own thing?
+				.setModifier(1)
+				.setOutput(ForestryFluids.BIOMASS.getFluid())
+				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
+				.build(consumer, id("fermenter", "potato"));
+		new FermenterRecipeBuilder()
+				.setResource(Ingredient.of(Items.SUGAR_CANE))
+				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cane"))
+				.setModifier(1)
+				.setOutput(ForestryFluids.BIOMASS.getFluid())
+				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
+				.build(consumer, id("fermenter", "sugar_cane"));
 	}
 
 	private void registerHygroregulator(Consumer<IFinishedRecipe> consumer) {

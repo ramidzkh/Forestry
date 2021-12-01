@@ -246,15 +246,6 @@ public class ModuleFactory extends BlankForestryModule {
 			}
 		}
 
-		// FERMENTER
-		// TODO: Re-enable
-		// RecipeUtil.addFermenterRecipes(OreDictUtil.TREE_SAPLING, ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.sapling"), ForestryFluids.BIOMASS);
-
-		// RecipeUtil.addFermenterRecipes(OreDictUtil.BLOCK_CACTUS, ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cactus"), ForestryFluids.BIOMASS);
-		// RecipeUtil.addFermenterRecipes(OreDictUtil.CROP_WHEAT, ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat"), ForestryFluids.BIOMASS);
-		// RecipeUtil.addFermenterRecipes(OreDictUtil.CROP_POTATO, 2 * ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat"), ForestryFluids.BIOMASS);
-		// RecipeUtil.addFermenterRecipes(OreDictUtil.SUGARCANE, ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cane"), ForestryFluids.BIOMASS);
-
 		ICircuitLayout layout = ChipsetManager.circuitRegistry.getLayout("forestry.machine.upgrade");
 
 		// / Solder Manager
