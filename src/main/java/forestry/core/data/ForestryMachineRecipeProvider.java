@@ -28,6 +28,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
 import forestry.climatology.features.ClimatologyItems;
+import forestry.core.config.Preference;
 import forestry.modules.features.FeatureItem;
 import forestry.storage.features.BackpackItems;
 import net.minecraftforge.common.Tags;
@@ -46,7 +47,6 @@ import forestry.core.blocks.BlockTypeCoreTesr;
 import forestry.core.circuits.EnumCircuitBoardType;
 import forestry.core.circuits.ItemCircuitBoard;
 import forestry.core.config.Constants;
-import forestry.core.config.GameMode;
 import forestry.core.data.builder.CarpenterRecipeBuilder;
 import forestry.core.data.builder.CentrifugeRecipeBuilder;
 import forestry.core.data.builder.FabricatorRecipeBuilder;
@@ -817,32 +817,30 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 	}
 
 	private void registerFermenter(Consumer<IFinishedRecipe> consumer) {
-		ForestryAPI.activeMode = new GameMode("EASY");
-
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.BROWN_MUSHROOM))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.mushroom"))
+				.setFermentationValue(Preference.FERMENTED_MUSHROOM)
 				.setModifier(1.5f)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(ForestryFluids.HONEY.getFluid(1))
 				.build(consumer, id("fermenter", "brown_mushroom_honey"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.BROWN_MUSHROOM))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.mushroom"))
+				.setFermentationValue(Preference.FERMENTED_MUSHROOM)
 				.setModifier(1.5f)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(ForestryFluids.JUICE.getFluid(1))
 				.build(consumer, id("fermenter", "brown_mushroom_juice"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.RED_MUSHROOM))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.mushroom"))
+				.setFermentationValue(Preference.FERMENTED_MUSHROOM)
 				.setModifier(1.5f)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(ForestryFluids.HONEY.getFluid(1))
 				.build(consumer, id("fermenter", "red_mushroom_honey"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.RED_MUSHROOM))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.mushroom"))
+				.setFermentationValue(Preference.FERMENTED_MUSHROOM)
 				.setModifier(1.5f)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(ForestryFluids.JUICE.getFluid(1))
@@ -860,35 +858,35 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 				.build(consumer, id("fermenter", "honeydew"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(ItemTags.SAPLINGS))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.sapling"))
+				.setFermentationValue(Preference.FERMENTED_SAPLING)
 				.setModifier(1)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
 				.build(consumer, id("fermenter", "sapling"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.CACTUS))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cactus"))
+				.setFermentationValue(Preference.FERMENTED_CACTI)
 				.setModifier(1)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
 				.build(consumer, id("fermenter", "cactus"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Tags.Items.CROPS_WHEAT))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat"))
+				.setFermentationValue(Preference.FERMENTED_WHEAT)
 				.setModifier(1)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
 				.build(consumer, id("fermenter", "wheat"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Tags.Items.CROPS_POTATO))
-				.setFermentationValue(2 * ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.wheat")) // TODO: Its own thing?
+				.setFermentationValue(2 * Preference.FERMENTED_WHEAT) // TODO: Its own thing?
 				.setModifier(1)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
 				.build(consumer, id("fermenter", "potato"));
 		new FermenterRecipeBuilder()
 				.setResource(Ingredient.of(Items.SUGAR_CANE))
-				.setFermentationValue(ForestryAPI.activeMode.getIntegerSetting("fermenter.yield.cane"))
+				.setFermentationValue(Preference.FERMENTED_CANE)
 				.setModifier(1)
 				.setOutput(ForestryFluids.BIOMASS.getFluid())
 				.setFluidResource(new FluidStack(Fluids.WATER, 1000))
@@ -994,7 +992,7 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 				.setFluidOutput(new FluidStack(Fluids.LAVA, 1600))
 				.build(consumer, id("squeezer", "lava"));
 
-		int seedOilAmount = ForestryAPI.activeMode.getIntegerSetting("squeezer.liquid.seed");
+		int seedOilAmount = Preference.SQUEEZED_LIQUID_SEED;
 
 		new SqueezerRecipeBuilder()
 				.setProcessingTime(10)
@@ -1002,8 +1000,8 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 				.setFluidOutput(ForestryFluids.SEED_OIL.getFluid(seedOilAmount))
 				.build(consumer, id("squeezer", "seeds"));
 
-		int appleMulchAmount = ForestryAPI.activeMode.getIntegerSetting("squeezer.mulch.apple");
-		int appleJuiceAmount = ForestryAPI.activeMode.getIntegerSetting("squeezer.liquid.apple");
+		int appleMulchAmount = Preference.SQUEEZED_MULCH_APPLE;
+		int appleJuiceAmount = Preference.SQUEEZED_LIQUID_APPLE;
 		FluidStack appleJuice = ForestryFluids.JUICE.getFluid(appleJuiceAmount);
 
 		new SqueezerRecipeBuilder()
@@ -1030,8 +1028,8 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 				.setFluidOutput(ForestryFluids.ICE.getFluid(4000))
 				.build(consumer, id("squeezer", "ice"));
 
-		int seedOilMultiplier = ForestryAPI.activeMode.getIntegerSetting("squeezer.liquid.seed");
-		int juiceMultiplier = ForestryAPI.activeMode.getIntegerSetting("squeezer.liquid.apple");
+		int seedOilMultiplier = Preference.SQUEEZED_LIQUID_SEED;
+		int juiceMultiplier = Preference.SQUEEZED_LIQUID_APPLE;
 
 		ItemStack mulch = new ItemStack(CoreItems.MULCH);
 		Fluid seedOil = ForestryFluids.SEED_OIL.getFluid();

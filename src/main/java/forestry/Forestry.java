@@ -40,7 +40,6 @@ import forestry.core.climate.ClimateRoot;
 import forestry.core.climate.ClimateStateHelper;
 import forestry.core.config.Config;
 import forestry.core.config.Constants;
-import forestry.core.config.GameMode;
 import forestry.core.data.ForestryBackpackTagProvider;
 import forestry.core.data.ForestryBlockModelProvider;
 import forestry.core.data.ForestryBlockStateProvider;
@@ -222,7 +221,6 @@ public class Forestry {
 		Config.load(Dist.DEDICATED_SERVER);
 		String gameMode = Config.gameMode;
 		Preconditions.checkNotNull(gameMode);
-		ForestryAPI.activeMode = new GameMode(gameMode);
 
 		//TODO - DistExecutor
 		callSetupListeners(true);
