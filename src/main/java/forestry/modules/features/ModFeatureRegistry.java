@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
@@ -53,6 +54,10 @@ public class ModFeatureRegistry {
 
 	public static ModFeatureRegistry get(String modId) {
 		return registries.computeIfAbsent(modId, ModFeatureRegistry::new);
+	}
+
+	public static Map<String, ModFeatureRegistry> getRegistries() {
+		return registries;
 	}
 
 	public static IFeatureRegistry get(Class<?> clazz) {
