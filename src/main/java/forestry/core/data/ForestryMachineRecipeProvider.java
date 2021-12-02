@@ -27,26 +27,28 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-import forestry.climatology.features.ClimatologyItems;
-import forestry.core.config.Preference;
-import forestry.modules.features.FeatureItem;
-import forestry.storage.features.BackpackItems;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.FluidStack;
 
+import forestry.api.arboriculture.EnumForestryWoodType;
+import forestry.api.arboriculture.EnumVanillaWoodType;
+import forestry.api.arboriculture.IWoodType;
+import forestry.api.arboriculture.TreeManager;
+import forestry.api.arboriculture.WoodBlockKind;
 import forestry.api.circuits.ICircuit;
-import forestry.api.core.ForestryAPI;
 import forestry.apiculture.features.ApicultureBlocks;
 import forestry.apiculture.features.ApicultureItems;
 import forestry.apiculture.items.EnumHoneyComb;
 import forestry.apiculture.items.EnumHoneyDrop;
 import forestry.apiculture.items.EnumPollenCluster;
 import forestry.apiculture.items.EnumPropolis;
+import forestry.climatology.features.ClimatologyItems;
 import forestry.core.blocks.BlockTypeCoreTesr;
 import forestry.core.circuits.EnumCircuitBoardType;
 import forestry.core.circuits.ItemCircuitBoard;
 import forestry.core.config.Constants;
+import forestry.core.config.Preference;
 import forestry.core.data.builder.CarpenterRecipeBuilder;
 import forestry.core.data.builder.CentrifugeRecipeBuilder;
 import forestry.core.data.builder.FabricatorRecipeBuilder;
@@ -67,6 +69,8 @@ import forestry.core.items.definitions.EnumCraftingMaterial;
 import forestry.core.items.definitions.EnumElectronTube;
 import forestry.mail.features.MailItems;
 import forestry.mail.items.ItemLetter;
+import forestry.modules.features.FeatureItem;
+import forestry.storage.features.BackpackItems;
 import forestry.storage.features.CrateItems;
 import forestry.storage.items.ItemCrated;
 
@@ -787,6 +791,40 @@ public class ForestryMachineRecipeProvider extends RecipeProvider {
 						.define('B', Tags.Items.SLIMEBALLS)
 						.define('E', Tags.Items.GEMS_EMERALD))
 				.build(consumer, id("fabricator", "electron_tubes", "flexible_casing"));
+
+		for (EnumForestryWoodType type : EnumForestryWoodType.values()) {
+			addFireproofRecipes(consumer, type);
+		}
+
+		for (EnumVanillaWoodType type : EnumVanillaWoodType.values()) {
+			addFireproofRecipes(consumer, type);
+		}
+	}
+
+	private void addFireproofRecipes(Consumer<IFinishedRecipe> consumer, IWoodType type) {
+		FluidStack liquidGlass = ForestryFluids.GLASS.getFluid(500);
+
+		new FabricatorRecipeBuilder()
+				.setPlan(Ingredient.EMPTY)
+				.setMolten(liquidGlass)
+				.recipe(ShapedRecipeBuilder.shaped(TreeManager.woodAccess.getBlock(type, WoodBlockKind.LOG, true).getBlock())
+						.pattern(" # ")
+						.pattern("#X#")
+						.pattern(" # ")
+						.define('#', CoreItems.REFRACTORY_WAX)
+						.define('X', TreeManager.woodAccess.getBlock(type, WoodBlockKind.LOG, false).getBlock()))
+				.build(consumer, id("fabricator", "fireproof", "logs", type.toString()));
+
+		new FabricatorRecipeBuilder()
+				.setPlan(Ingredient.EMPTY)
+				.setMolten(liquidGlass)
+				.recipe(ShapedRecipeBuilder.shaped(TreeManager.woodAccess.getBlock(type, WoodBlockKind.PLANKS, true).getBlock(), 5)
+						.pattern("X#X")
+						.pattern("#X#")
+						.pattern("X#X")
+						.define('#', CoreItems.REFRACTORY_WAX)
+						.define('X', TreeManager.woodAccess.getBlock(type, WoodBlockKind.PLANKS, false).getBlock()))
+				.build(consumer, id("fabricator", "fireproof", "planks", type.toString()));
 	}
 
 	private void registerFabricatorSmelting(Consumer<IFinishedRecipe> consumer) {
