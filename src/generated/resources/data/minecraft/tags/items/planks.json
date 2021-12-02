@@ -59,11 +59,11 @@
     "forestry:citrus_fireproof_planks",
     "forestry:mahogany_fireproof_planks",
     "forestry:zebrawood_fireproof_planks",
-    "forestry:birch_fireproof_planks",
-    "forestry:jungle_fireproof_planks",
     "forestry:acacia_fireproof_planks",
+    "forestry:oak_fireproof_planks",
+    "forestry:birch_fireproof_planks",
     "forestry:spruce_fireproof_planks",
     "forestry:dark_oak_fireproof_planks",
-    "forestry:oak_fireproof_planks"
+    "forestry:jungle_fireproof_planks"
   ]
 }

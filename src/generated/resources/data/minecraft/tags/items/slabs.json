@@ -59,11 +59,11 @@
     "forestry:citrus_fireproof_slab",
     "forestry:mahogany_fireproof_slab",
     "forestry:zebrawood_fireproof_slab",
-    "forestry:birch_fireproof_slab",
-    "forestry:jungle_fireproof_slab",
     "forestry:acacia_fireproof_slab",
+    "forestry:oak_fireproof_slab",
+    "forestry:birch_fireproof_slab",
     "forestry:spruce_fireproof_slab",
     "forestry:dark_oak_fireproof_slab",
-    "forestry:oak_fireproof_slab"
+    "forestry:jungle_fireproof_slab"
   ]
 }

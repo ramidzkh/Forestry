@@ -59,11 +59,11 @@
     "forestry:citrus_fireproof_log",
     "forestry:mahogany_fireproof_log",
     "forestry:zebrawood_fireproof_log",
-    "forestry:birch_fireproof_log",
-    "forestry:jungle_fireproof_log",
     "forestry:acacia_fireproof_log",
+    "forestry:oak_fireproof_log",
+    "forestry:birch_fireproof_log",
     "forestry:spruce_fireproof_log",
     "forestry:dark_oak_fireproof_log",
-    "forestry:oak_fireproof_log"
+    "forestry:jungle_fireproof_log"
   ]
 }

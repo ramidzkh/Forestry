@@ -59,11 +59,11 @@
     "forestry:citrus_fireproof_fence",
     "forestry:mahogany_fireproof_fence",
     "forestry:zebrawood_fireproof_fence",
-    "forestry:birch_fireproof_fence",
-    "forestry:jungle_fireproof_fence",
     "forestry:acacia_fireproof_fence",
+    "forestry:oak_fireproof_fence",
+    "forestry:birch_fireproof_fence",
     "forestry:spruce_fireproof_fence",
     "forestry:dark_oak_fireproof_fence",
-    "forestry:oak_fireproof_fence"
+    "forestry:jungle_fireproof_fence"
   ]
 }

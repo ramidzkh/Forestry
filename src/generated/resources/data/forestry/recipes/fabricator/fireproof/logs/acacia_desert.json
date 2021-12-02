@@ -1,0 +1,27 @@
+{
+  "type": "forestry:fabricator",
+  "plan": [],
+  "molten": {
+    "FluidName": "forestry:glass",
+    "Amount": 500
+  },
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " # ",
+      "#X#",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "forestry:refractory_wax"
+      },
+      "X": {
+        "item": "forestry:acacia_desert_log"
+      }
+    },
+    "result": {
+      "item": "forestry:acacia_desert_fireproof_log"
+    }
+  }
+}

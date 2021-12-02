@@ -59,11 +59,11 @@
     "forestry:citrus_fireproof_stairs",
     "forestry:mahogany_fireproof_stairs",
     "forestry:zebrawood_fireproof_stairs",
-    "forestry:birch_fireproof_stairs",
-    "forestry:jungle_fireproof_stairs",
     "forestry:acacia_fireproof_stairs",
+    "forestry:oak_fireproof_stairs",
+    "forestry:birch_fireproof_stairs",
     "forestry:spruce_fireproof_stairs",
     "forestry:dark_oak_fireproof_stairs",
-    "forestry:oak_fireproof_stairs"
+    "forestry:jungle_fireproof_stairs"
   ]
 }
