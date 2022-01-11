@@ -1,0 +1,7 @@
+{
+  "name": "item.forestry.book_forester",
+  "landing_text": "for.gui.book.patchouli.landing_text",
+  "book_texture": "forestry:textures/gui/almanac/foresters_manual.png",
+  "model": "forestry:book_forester",
+  "i18n": true
+}
